@@ -13,12 +13,16 @@ echo "Setting up MQTT configuration..."
 BROKER_IP="192.168.1.100"
 BROKER_PORT="1883"
 MQTT_TOPIC="smart-meter/data"
+USERNAME="username"
+PASSWORD="password"
 
 cat <<EOF > config.json
 {
   "broker_ip": "$BROKER_IP",
   "broker_port": $BROKER_PORT,
   "mqtt_topic": "$MQTT_TOPIC"
+  "username" = "$USERNAME"
+  "password" = "$PASSWORD"
 }
 EOF
 
