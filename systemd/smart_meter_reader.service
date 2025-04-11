@@ -3,12 +3,12 @@ Description=Smart Meter Reader
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/python3 /home/pi/smart-meter-reader/smart_meter_reader.py
-WorkingDirectory=/home/pi/smart-meter-reader
+ExecStart=/home/filip/slimmemeter/venv/bin/python /home/filip/slimmemeter/smart_meter_reader.py
+WorkingDirectory=/home/filip/slimmemeter
 StandardOutput=inherit
 StandardError=inherit
 Restart=always
-User=pi
+User=filip
 
 [Install]
 WantedBy=multi-user.target
