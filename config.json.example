@@ -1,5 +1,7 @@
 {
   "broker_ip": "192.168.1.100",
   "broker_port": 1883,
-  "mqtt_topic": "smart-meter/data"
+  "mqtt_topic": "smart-meter/data",
+  "username": "your_username",
+  "password": "your_password"
 }
