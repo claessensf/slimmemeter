@@ -2,7 +2,7 @@
 
 echo "Updating system and installing git..."
 sudo apt update && sudo apt upgrade -y
-sudo apt install -y git
+sudo apt install -y git nano net-tools
 
 # Clone and run the setup script from GitHub
 git clone https://github.com/your-repo/smart-meter-reader.git /home/pi/smart-meter-reader
