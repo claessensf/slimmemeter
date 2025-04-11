@@ -8,10 +8,15 @@ with open("config.json", "r") as f:
 
 broker_ip = config["broker_ip"]
 broker_port = config["broker_port"]
-mqtt_topic = config["mqtt_topic"]
+username = config["username"]
+password = config["password"]
+
+# Use the username as the base topic
+base_topic = username
 
 # MQTT setup
 mqtt_client = mqtt.Client()
+mqtt_client.username_pw_set(username, password)
 mqtt_client.connect(broker_ip, broker_port)
 
 # Serial setup
@@ -24,7 +29,8 @@ def read_smart_meter():
             try:
                 line = ser.readline().decode("utf-8").strip()
                 print(line)  # Debugging
-                mqtt_client.publish(mqtt_topic, line)
+                # Publish MQTT message with username as base topic
+                mqtt_client.publish(f"{base_topic}/data", line)
             except Exception as e:
                 print(f"Error: {e}")
 
